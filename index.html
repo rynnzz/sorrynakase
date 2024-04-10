@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I'm Sorry my Baby</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-image: url('panda.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh; /* Set height to full viewport height */
+        margin: 0; /* Remove default margin */
+    }
+    .card {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    button {
+        margin: 10px;
+        font-size: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #yesButton {
+        background-color: green;
+        color: white;
+    }
+    #noButton {
+        background-color: red;
+        color: white;
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h2>I'm Sorry na kase huhu </h2>
+    <p>Di nato mausab promise pa huhu. Please forgive me.</p>
+    <button onclick="forgiven()" id="yesButton">FORGIVEN</button><br>
+    <button onclick="tryHarder()" id="noButton">No</button>
+</div>
+
+<script>
+let tryHarderTexts = ["Di najud?", "Pretty Please?", "Promise dili na mausab", "Please Forgive Me", "I'm Sorry", "Di nako kaya mawala ka", "I'm missing you so much", "I'll be better"];
+
+let fontSize = 20; // Initial font size for the "No" button
+
+function tryHarder() {
+    let noButton = document.getElementById("noButton");
+    let currentText = noButton.innerText;
+    let index = tryHarderTexts.indexOf(currentText);
+    if (index === tryHarderTexts.length - 1) {
+        index = -1;
+    }
+    noButton.innerText = tryHarderTexts[index + 1];
+    
+    // Increase font size
+    fontSize += 2;
+    noButton.style.fontSize = fontSize + "px";
+}
+
+function forgiven() {
+    window.location.href = "iloveyou.html";
+}
+</script>
+
+</body>
+</html>
